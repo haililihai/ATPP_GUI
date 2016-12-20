@@ -1,0 +1,42 @@
+until [[ "$E" -eq "window1" ]];do
+    define E gtk "gtk_server_callback wait"
+	[[ "$E" == "button_dir_pl_file_set" ]] && on_button_dir_pl_file_set
+	[[ "$E" == "button_dir_work_file_set" ]] && on_button_dir_work_file_set
+	[[ "$E" == "button_dir_data_file_set" ]] && on_button_dir_data_file_set
+	[[ "$E" == "button_file_sub_file_set" ]] && on_button_file_sub_file_set
+	[[ "$E" == "left_toggled" ]] && on_left_toggled
+	[[ "$E" == "right_toggled" ]] && on_right_toggled
+	[[ "$E" == "step0_toggled" ]] && on_step0_toggled
+	[[ "$E" == "button_edit_clicked" ]] && on_button_edit_clicked
+	[[ "$E" == "step1_toggled" ]] && on_step1_toggled
+	[[ "$E" == "step2_toggled" ]] && on_step2_toggled
+	[[ "$E" == "step3_toggled" ]] && on_step3_toggled
+	[[ "$E" == "step4_toggled" ]] && on_step4_toggled
+	[[ "$E" == "step5_toggled" ]] && on_step5_toggled
+	[[ "$E" == "step6_toggled" ]] && on_step6_toggled
+	[[ "$E" == "step7_toggled" ]] && on_step7_toggled
+	[[ "$E" == "step8_toggled" ]] && on_step8_toggled
+	[[ "$E" == "step9_toggled" ]] && on_step9_toggled
+	[[ "$E" == "step10_toggled" ]] && on_step10_toggled
+	[[ "$E" == "step11_toggled" ]] && on_step11_toggled
+	[[ "$E" == "step12_toggled" ]] && on_step12_toggled
+	[[ "$E" == "split_half_toggled" ]] && on_split_half_toggled
+	[[ "$E" == "pairwise_toggled" ]] && on_pairwise_toggled
+	[[ "$E" == "leave_one_out_toggled" ]] && on_leave_one_out_toggled
+	[[ "$E" == "hi_vi_toggled" ]] && on_hi_vi_toggled
+	[[ "$E" == "tpd_toggled" ]] && on_tpd_toggled
+	[[ "$E" == "cont_toggled" ]] && on_cont_toggled
+	[[ "$E" == "silhouette_toggled" ]] && on_silhouette_toggled
+	[[ "$E" == "GE_toggled" ]] && on_GE_toggled
+	[[ "$E" == "button_exe_matlab_file_set" ]] && on_button_exe_matlab_file_set
+	[[ "$E" == "button_dir_spm_file_set" ]] && on_button_dir_spm_file_set
+	[[ "$E" == "button_dir_nifti_file_set" ]] && on_button_dir_nifti_file_set
+	[[ "$E" == "button_exe_qsub_file_set" ]] && on_button_exe_qsub_file_set
+	[[ "$E" == "button_exe_fsl_sub_file_set" ]] && on_button_exe_fsl_sub_file_set
+	[[ "$E" == "button_exe_probtrackx_file_set" ]] && on_button_exe_probtrackx_file_set
+	[[ "$E" == "button_file_temp_file_set" ]] && on_button_file_temp_file_set
+	[[ "$E" == "button_run_clicked" ]] && on_button_run_clicked
+	[[ "$E" == "button_stop_clicked" ]] && on_button_stop_clicked
+	[[ "$E" == "button_progress_clicked" ]] && on_button_progress_clicked
+	[[ "$E" == "button_log_clicked" ]] && on_button_log_clicked
+done

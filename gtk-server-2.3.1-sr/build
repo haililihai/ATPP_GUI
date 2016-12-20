@@ -1,0 +1,92 @@
+#!/bin/bash
+#
+# Script to build GTK-server
+#
+# Peter van Eerten - peter@gtk-server.org
+#
+#-------------------------------------------------------
+
+trap 'echo; echo; exit' ERR SIGQUIT SIGINT SIGKILL
+
+if [[ `whoami` != "root" ]]
+then
+    echo
+    echo "You have to SU to root first!"
+    echo
+    exit
+fi
+
+# Make sure tree is clean
+if [[ -f Makefile ]]
+then
+    make clean > /dev/null 2>&1
+fi
+
+# Wait for user
+echo
+echo "This script compiles the GTK-server and installs it on your system."
+echo
+read -p "Do you want to continue (y/n)?" VAR
+
+if [[ ${VAR} = "n" ]]
+then
+    echo
+    echo "Exiting..."
+    echo
+    exit
+fi
+
+echo
+echo "*** Running configure for standalone GTK-server ***"
+echo
+if [[ `uname` = *BSD* ]]
+then
+    ./configure --prefix=/usr --sysconfdir=/etc --with-gtk2
+
+else
+    ./configure --prefix=/usr --sysconfdir=/etc
+fi
+
+echo
+echo "*** Starting compilation ***"
+echo
+make
+
+echo
+echo "*** Installing ***"
+echo
+make install
+
+echo
+echo "*** Done, cleaning up ***"
+echo
+make clean
+
+echo
+echo "*** Running configure for GTK-server as shared object ***"
+echo
+if [[ `uname` = *BSD* ]]
+then
+    ./configure --prefix=/usr --sysconfdir=/etc --enable-library --with-gtk2
+else
+    ./configure --prefix=/usr --sysconfdir=/etc --enable-library
+fi
+
+echo
+echo "*** Starting compilation ***"
+echo
+make
+
+echo
+echo "*** Installing ***"
+echo
+make install
+
+echo
+echo "*** Cleaning up ***"
+echo
+make delete
+
+echo
+echo "*** Done! ***"
+echo
