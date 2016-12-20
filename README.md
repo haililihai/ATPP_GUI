@@ -23,6 +23,7 @@ ATPP (Automatic Tractography-based Parcellation Pipeline)
 
 - Tools:
     - FSL (with FDT toolbox), SGE and MATLAB (with SPM8)
+    - gtk-server and ffcall libraries, which have been included in this repository
 - Data files:
     - T1 image for each subject
     - b0 image for each subject
