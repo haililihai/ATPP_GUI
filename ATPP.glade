@@ -374,7 +374,7 @@
                       <widget class="GtkEntry" id="name_ROI">
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>
-                        <property name="max_length">8</property>
+                        <property name="max_length">64</property>
                         <property name="invisible_char">●</property>
                         <property name="invisible_char_set">True</property>
                         <property name="primary_icon_activatable">False</property>
