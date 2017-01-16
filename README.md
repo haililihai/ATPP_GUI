@@ -6,6 +6,7 @@
         |____| |____||_____|  |_____|  |_____|
 
 ## ATPP GUI version
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.239705.svg)](https://doi.org/10.5281/zenodo.239705)
 
 ATPP (Automatic Tractography-based Parcellation Pipeline)
 
