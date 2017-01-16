@@ -55,6 +55,7 @@
 # Global configuration file
 # Before running the pipeline, you NEED to modify parameters in the file.
 #==============================================================================
+set -o allexport
 CONFIG=$1
 if [ -f ${CONFIG} ]; then 
     source ${CONFIG}

@@ -5,6 +5,7 @@
 # Hai Li (hai.li@nlpr.ia.ac.cn)
 
 # fetch variables
+set -o allexport
 source $1
 
 # show header info
