@@ -15,8 +15,54 @@ ATPP (Automatic Tractography-based Parcellation Pipeline)
 - Modular and flexible structure
 - Simple and easy-to-use settings
 
-## Notice
--  Usage: `./ATPP &`
+## Installation
+1. Install build tools.
+
+   For RedHat/CentOS:
+
+   ```shell
+   sudo yum groupinstall 'Development Tools'
+   ```
+
+   For Debian/Ubuntu/Mint:
+
+   ```shell
+   sudo apt-get install build-essential
+   ```
+
+2. Install ffcall (already included in the repository):
+
+   ```shell
+   cd ffcall-1.10
+   ./configure; make; sudo make install
+   ```
+
+3. Install GTK2 backend:
+
+   For RedHat/CentOS:
+
+   ```shell
+   sudo yum install gtk2-devel
+   ```
+
+   For Debian/Ubuntu/Mint:
+
+   ```shell
+   sudo apt-get install libgtk2.0-dev
+   ```
+
+4. Install gtk-server (already included in the repository):
+
+   ```shell
+   cd gtk-server-2.3.1-sr
+   ./configure; make; sudo make install
+   ```
+
+5. Finally, run ATPP:
+
+   ```
+   ./ATPP &
+   ```
 
 
 ## Prerequisites:

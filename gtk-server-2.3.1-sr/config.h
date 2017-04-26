@@ -45,10 +45,10 @@
 /* #undef GTK_SERVER_KSH93 */
 
 /* Define FFI to use libFFI */
-#define GTK_SERVER_FFI 1
+/* #undef GTK_SERVER_FFI */
 
 /* Define FFCALL to use FFCALL */
-/* #undef GTK_SERVER_FFCALL */
+#define GTK_SERVER_FFCALL 1
 
 /* Define CINV to use C/Invoke */
 /* #undef GTK_SERVER_CINV */
@@ -60,4 +60,4 @@
 /* #undef GTK_SERVER_SOCK_LONG */
 
 /* Define SSL if OpenSSL is available */
-#define GTK_SERVER_USE_SSL 1
+/* #undef GTK_SERVER_USE_SSL */
