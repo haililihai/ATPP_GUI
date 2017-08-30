@@ -8,8 +8,8 @@ datarootdir =	@datarootdir@
 MANDIR =	${prefix}/man
 CC =		gcc
 STRIP =		strip
-CFLAGS =	-Wall -pedantic -pthread -I/usr/include/gtk-2.0 -I/usr/lib/x86_64-linux-gnu/gtk-2.0/include -I/usr/include/atk-1.0 -I/usr/include/cairo -I/usr/include/gdk-pixbuf-2.0 -I/usr/include/pango-1.0 -I/usr/include/gio-unix-2.0/ -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -I/usr/include/pixman-1 -I/usr/include/freetype2 -I/usr/include/libpng12 -I/usr/include/harfbuzz   -fPIC  -DHAVE_CONFIG_H -DLOCALCFG=\"$(SYSCONFIG)/gtk-server.cfg\"
-LDFLAGS =	-export-dynamic  -lffi -lgtk-x11-2.0 -lgdk-x11-2.0 -latk-1.0 -lgio-2.0 -lpangoft2-1.0 -lpangocairo-1.0 -lgdk_pixbuf-2.0 -lcairo -lpango-1.0 -lfreetype -lfontconfig -lgobject-2.0 -lglib-2.0   -L/usr/lib64 -lcrypto -lssl -ldl
+CFLAGS =	-Wall -pedantic -pthread -ldl -I/usr/include/gtk-2.0 -I/usr/lib/x86_64-linux-gnu/gtk-2.0/include -I/usr/include/gio-unix-2.0/ -I/usr/include/cairo -I/usr/include/pango-1.0 -I/usr/include/atk-1.0 -I/usr/include/cairo -I/usr/include/pixman-1 -I/usr/include/libpng12 -I/usr/include/gdk-pixbuf-2.0 -I/usr/include/libpng12 -I/usr/include/pango-1.0 -I/usr/include/harfbuzz -I/usr/include/pango-1.0 -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -I/usr/include/freetype2 -fPIC  -DHAVE_CONFIG_H -DLOCALCFG=\"$(SYSCONFIG)/gtk-server.cfg\"
+LDFLAGS =	-ldl -export-dynamic  -lavcall -lgtk-x11-2.0 -lgdk-x11-2.0 -lpangocairo-1.0 -latk-1.0 -lcairo -lgdk_pixbuf-2.0 -lgio-2.0 -lpangoft2-1.0 -lpango-1.0 -lgobject-2.0 -lglib-2.0 -lfontconfig -lfreetype -L/usr/lib64
 OBJS =		gtk-server.o 
 INSTALL = 	/usr/bin/install -c
 TARGET =	gtk-server
