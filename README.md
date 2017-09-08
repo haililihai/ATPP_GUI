@@ -22,7 +22,7 @@ ATPP (Automatic Tractography-based Parcellation Pipeline)
 
    ```shell
    sudo yum groupinstall 'Development Tools'
-   sudo yum groupinstall 'Desktop Platform Development'
+   sudo yum groupinstall 'Desktop Platform Development'
    ```
 
    For Debian/Ubuntu/Mint:
@@ -46,28 +46,28 @@ ATPP (Automatic Tractography-based Parcellation Pipeline)
    ```
 3. Install gedit
 
-   For RedHat/CentOS:
+   For RedHat/CentOS:
    ```shell
    sudo yum install gedit
    ```
    For Debian/Ubuntu/Mint:
 
    ```shell
-   sudo apt-get install gedit
-   ```   
-   
+   sudo apt-get install gedit
+   ```
+
 4. Install ffcall (already included in the repository):
 
    ```shell
-   git clone https://github.com/haililihai/ATPP_GUI.git
+   git clone https://github.com/haililihai/ATPP_GUI.git
    cd ATPP_GUI/ffcall-1.10
    ./configure; make; sudo make install
    ```
-   
+
 5. Install gtk-server (already included in the repository):
 
    ```shell
-   cd ../gtk-server-2.3.1-sr
+   cd ../gtk-server-2.3.1-sr
    ./configure; make; sudo make install
    cd ..
    ```
@@ -83,7 +83,7 @@ ATPP (Automatic Tractography-based Parcellation Pipeline)
 ===============================================
 
 - Tools:
-    - FSL (with FDT toolbox), SGE and MATLAB (with SPM8)
+    - FSL (with FDT toolbox), SGE and MATLAB (with SPM8), Gedit
     - gtk-server and ffcall libraries, which have been included in this repository
 - Data files:
     - T1 image for each subject
