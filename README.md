@@ -22,6 +22,7 @@ ATPP (Automatic Tractography-based Parcellation Pipeline)
 
    ```shell
    sudo yum groupinstall 'Development Tools'
+   sudo yum groupinstall 'Desktop Platform Development'
    ```
 
    For Debian/Ubuntu/Mint:
@@ -30,14 +31,7 @@ ATPP (Automatic Tractography-based Parcellation Pipeline)
    sudo apt-get install build-essential
    ```
 
-2. Install ffcall (already included in the repository):
-
-   ```shell
-   cd ffcall-1.10
-   ./configure; make; sudo make install
-   ```
-
-3. Install GTK2 backend:
+2. Install GTK2 backend:
 
    For RedHat/CentOS:
 
@@ -50,15 +44,35 @@ ATPP (Automatic Tractography-based Parcellation Pipeline)
    ```shell
    sudo apt-get install libgtk2.0-dev
    ```
+3. Install gedit
 
-4. Install gtk-server (already included in the repository):
+   For RedHat/CentOS:
+   ```shell
+   sudo yum install gedit
+   ```
+   For Debian/Ubuntu/Mint:
 
    ```shell
-   cd gtk-server-2.3.1-sr
+   sudo apt-get install gedit
+   ```   
+   
+4. Install ffcall (already included in the repository):
+
+   ```shell
+   git clone https://github.com/haililihai/ATPP_GUI.git
+   cd ATPP_GUI/ffcall-1.10
    ./configure; make; sudo make install
    ```
+   
+5. Install gtk-server (already included in the repository):
 
-5. Finally, run ATPP:
+   ```shell
+   cd ../gtk-server-2.3.1-sr
+   ./configure; make; sudo make install
+   cd ..
+   ```
+
+6. Finally, run ATPP:
 
    ```
    ./ATPP &
