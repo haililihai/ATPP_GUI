@@ -18,4 +18,4 @@ shift
 RIGHT=$1
 
 echo ${COMMAND_MATLAB}
-${COMMAND_MATLAB} -nodisplay -nosplash -r "addpath('${PIPELINE}');addpath('${NIFTI}');ROI_calc_coord('${WD}','${ROI}','${SUB_LIST}','${POOLSIZE}',${LEFT},${RIGHT});exit"
+${COMMAND_MATLAB} -nodisplay -nosplash -r "addpath('${PIPELINE}');addpath('${NIFTI}');ROI_calc_coord('${WD}','${ROI}','${SUB_LIST}',${POOLSIZE},${LEFT},${RIGHT});exit"
