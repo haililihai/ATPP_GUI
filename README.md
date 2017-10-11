@@ -22,6 +22,7 @@ ATPP (Automatic Tractography-based Parcellation Pipeline)
 
    ```shell
    sudo yum groupinstall 'Development Tools'
+   sudo yum groupinstall 'Desktop Platform Development'
    ```
 
    For Debian/Ubuntu/Mint:
@@ -30,35 +31,63 @@ ATPP (Automatic Tractography-based Parcellation Pipeline)
    sudo apt-get install build-essential
    ```
 
-2. Install ffcall (already included in the repository):
-
-   ```shell
-   cd ffcall-1.10
-   ./configure; make; sudo make install
-   ```
-
-3. Install GTK2 backend:
+2. Install GTK2 backend:
 
    For RedHat/CentOS:
 
    ```shell
-   sudo yum install gtk2-devel
+   sudo yum install gtk2-devel libglade2-devel
    ```
 
    For Debian/Ubuntu/Mint:
 
    ```shell
-   sudo apt-get install libgtk2.0-dev
+   sudo apt-get install libgtk2.0-dev libglade2-dev
    ```
 
-4. Install gtk-server (already included in the repository):
+3. Install gedit
+
+   For RedHat/CentOS:
+   ```shell
+   sudo yum install gedit
+   ```
+   For Debian/Ubuntu/Mint:
 
    ```shell
-   cd gtk-server-2.3.1-sr
+   sudo apt-get install gedit
+   ```
+
+4. Install ffcall (already included in the repository):
+
+   ```shell
+   git clone https://github.com/haililihai/ATPP_GUI.git
+   cd ATPP_GUI/ffcall-1.10
    ./configure; make; sudo make install
    ```
 
-5. Finally, run ATPP:
+5. Install gtk-server (already included in the repository):
+
+   ```shell
+   cd ../gtk-server-2.3.1-sr
+   ./configure; make; sudo make install
+   cd ..
+   ```
+      In the step of 'make', if the following error arises:
+
+      > libdl.so.2: error adding symbols: DSO missing from command line
+
+      Please edit the `Makefile` in the directory of gtk-server
+
+      ```shell
+   cd ../gtk-server-2.3.1-sr
+   gedit Makefile
+   # add '-ldl' option to the LDFLAGS
+   # e.g. LDFLAGS = -ldl ...
+   # then make again
+   make; sudo make install
+      ```
+
+6. Finally, run ATPP:
 
    ```
    ./ATPP &
@@ -69,7 +98,7 @@ ATPP (Automatic Tractography-based Parcellation Pipeline)
 ===============================================
 
 - Tools:
-    - FSL (with FDT toolbox), SGE and MATLAB (with SPM8)
+    - FSL (with FDT toolbox), SGE and MATLAB (with SPM8), Gedit
     - gtk-server and ffcall libraries, which have been included in this repository
 - Data files:
     - T1 image for each subject
