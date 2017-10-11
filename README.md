@@ -36,13 +36,13 @@ ATPP (Automatic Tractography-based Parcellation Pipeline)
    For RedHat/CentOS:
 
    ```shell
-   sudo yum install gtk2-devel
+   sudo yum install gtk2-devel libglade2-devel
    ```
 
    For Debian/Ubuntu/Mint:
 
    ```shell
-   sudo apt-get install libgtk2.0-dev
+   sudo apt-get install libgtk2.0-dev libglade2-dev
    ```
 
 3. Install gedit
