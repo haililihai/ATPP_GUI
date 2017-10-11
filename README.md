@@ -44,6 +44,7 @@ ATPP (Automatic Tractography-based Parcellation Pipeline)
    ```shell
    sudo apt-get install libgtk2.0-dev
    ```
+
 3. Install gedit
 
    For RedHat/CentOS:
@@ -71,6 +72,20 @@ ATPP (Automatic Tractography-based Parcellation Pipeline)
    ./configure; make; sudo make install
    cd ..
    ```
+      In the step of 'make', if the following error arises:
+
+      > libdl.so.2: error adding symbols: DSO missing from command line
+
+      Please edit the `Makefile` in the directory of gtk-server
+
+      ```shell
+   cd ../gtk-server-2.3.1-sr
+   gedit Makefile
+   # add '-ldl' option to the LDFLAGS
+   # e.g. LDFLAGS = -ldl ...
+   # then make again
+   make; sudo make install
+      ```
 
 6. Finally, run ATPP:
 
