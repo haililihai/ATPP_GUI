@@ -20,8 +20,9 @@ sumimg = zeros(size(defnii.img));
 for j = 1:subnum 
 	  disp(strcat(SUB{j},'_',LR));
 	  datanii = load_untouch_nii(strcat(PWD,'/',SUB{j},'/',SUB{j},'_',ROI,'_',LR,'_',METHOD,'/',num2str(VOX_SIZE),'mm/',num2str(VOX_SIZE),'mm_',ROI,'_',LR,'_',num2str(2),'_MNI.nii.gz'));
+	  datanii.img(isnan(datanii.img))=0;
 	  datanii.img(datanii.img>0) = 1;
-	  datanii.img=datanii.img;
+	  datanii.img=double(datanii.img);
 	  sumimg = sumimg + datanii.img;
 end
 
@@ -45,7 +46,8 @@ for CL_NUM=2:MAX_CL_NUM
 	    groupmatrix = zeros(ROISIZE,ROISIZE);
 	    for j = 1:length(SUB)
 			datanii = load_untouch_nii(strcat(PWD,'/',SUB{j},'/',SUB{j},'_',ROI,'_',LR,'_',METHOD,'/',num2str(VOX_SIZE),'mm/',num2str(VOX_SIZE),'mm_',ROI,'_',LR,'_',num2str(CL_NUM),'_MNI.nii.gz'));
-			dataimg = datanii.img;
+			dataimg = double(datanii.img);
+			dataimg(isnan(dataimg))=0;
 			kimatrix=zeros(ROISIZE,ROISIZE);
 			for ki=1:CL_NUM
 				kimatrix(:)=0;
